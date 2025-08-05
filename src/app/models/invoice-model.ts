@@ -2,7 +2,7 @@ import { Client } from "./client";
 import { Company } from "./company";
 import { Item } from "./item";
 
-export class Invoice {
+export class InvoiceModel {
     id!: number;
     name!: string;
     client!: Client;
