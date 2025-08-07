@@ -12,7 +12,7 @@
     <tbody>
         @for (item of items; track $index)
         {
-        <tr row-item [item]="item"></tr>
+        <tr row-item [item]="item" (removeEventEmmiter)="onRemove($event)"></tr>
         }
     </tbody>
 </table>

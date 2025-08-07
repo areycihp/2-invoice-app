@@ -5,17 +5,23 @@
         </div>
 
         <div class="card-body">
-            <invoice-view [id]="invoice.id" [name]="invoice.name"></invoice-view>
+            <invoice-view [id]="invoice.id" [name]="invoice.name"/>
             <div class="row my-3">
                 <div class="col">
-                    <client-view [client]="invoice.client"></client-view>
+                    <client-view [client]="invoice.client"/>
                 </div>
 
                 <div class="col">
-                    <company-view [company]="invoice.company"></company-view>
+                    <company-view [company]="invoice.company"/>
                 </div>
                 <div class="my-3">
-                    <list-items [items]="invoice.items"></list-items>
+                    <list-items [items]="invoice.items" (removeEventEmmiter)="removeItem($event)"/>
+                </div>
+                <div>
+                    <total [total]="invoice.total" />
+                </div>
+                <div>
+                    <form-item (addItemEventEmmiter)="addItem($event)"/>
                 </div>
             </div>
         </div>
